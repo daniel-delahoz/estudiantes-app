@@ -96,5 +96,5 @@ async function eliminarEstudiante(id) {
   cargarEstudiantes();
 }
 
-// 🚀 Inicial
+//  Inicial
 cargarEstudiantes();
