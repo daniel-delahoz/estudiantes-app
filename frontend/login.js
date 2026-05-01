@@ -37,9 +37,9 @@ document.getElementById("verifyForm").addEventListener("submit", async (e) => {
 
   if (data.token) {
     localStorage.setItem("token", data.token);
-    alert("Login exitoso 🔥");
+    alert("Login exitoso ");
     window.location.href = "index.html";
   } else {
-    alert("OTP incorrecto ❌");
+    alert("OTP incorrecto ");
   }
 });
