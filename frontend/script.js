@@ -1,19 +1,19 @@
 const API_URL = "http://localhost:3000";
 
-// 🔐 Verificar token
+//  Verificar token
 const token = localStorage.getItem("token");
 
 if (!token) {
   window.location.href = "login.html";
 }
 
-// 🚪 Logout
+// Logout
 function logout() {
   localStorage.removeItem("token");
   window.location.href = "login.html";
 }
 
-// 📥 Cargar estudiantes
+// Cargar estudiantes
 async function cargarEstudiantes() {
   const res = await fetch(`${API_URL}/estudiantes`, {
     headers: {
@@ -42,7 +42,7 @@ async function cargarEstudiantes() {
   });
 }
 
-// ➕ Crear estudiante
+//  Crear estudiante
 document.getElementById("formEstudiante").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -62,7 +62,7 @@ document.getElementById("formEstudiante").addEventListener("submit", async (e) =
   cargarEstudiantes();
 });
 
-// ✏️ Editar estudiante
+// Editar estudiante
 async function editarEstudiante(id, nombreActual, cursoActual) {
   const nuevoNombre = prompt("Nuevo nombre:", nombreActual);
   const nuevoCurso = prompt("Nuevo curso:", cursoActual);
@@ -81,7 +81,7 @@ async function editarEstudiante(id, nombreActual, cursoActual) {
   cargarEstudiantes();
 }
 
-// 🗑️ Eliminar estudiante
+//  Eliminar estudiante
 async function eliminarEstudiante(id) {
   const confirmar = confirm("¿Eliminar este estudiante?");
   if (!confirmar) return;
